@@ -1,0 +1,91 @@
+{
+	"info": {
+		"_postman_id": "409765bb-c363-4f6a-b143-2968392683c7",
+		"name": "digitalArchive",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "digitalArchive",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"First String Check\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"The Android Realm Podcast Episode 181\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Second String Check\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"How To Get Live Stock Market Prices In a Spreadsheet On Your Mac\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Third String Check\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Bookbinding and Its Auxiliary Branches\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://archive.org/advancedsearch.php?q=subject:google+sheets&output=json",
+					"protocol": "https",
+					"host": [
+						"archive",
+						"org"
+					],
+					"path": [
+						"advancedsearch.php"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "subject:google+sheets"
+						},
+						{
+							"key": "output",
+							"value": "json"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
